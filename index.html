@@ -16,19 +16,19 @@
   <meta property="og:title" content="Bodas de Plata — 25.º Aniversario" />
   <meta property="og:description" content="Eva y Luis te invitan a celebrar 25 años de amor. Acompáñanos el sábado 26 de diciembre de 2026 en Querétaro." />
   <meta property="og:url" content="https://evayluis.space/" />
-  <meta property="og:image" content="https://evayluis.space/assets/og-bodas-de-plata-2026.png" />
-  <meta property="og:image:secure_url" content="https://evayluis.space/assets/og-bodas-de-plata-2026.png" />
-  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image" content="https://evayluis.space/assets/og-bodas-de-plata-2026-warm.jpg" />
+  <meta property="og:image:secure_url" content="https://evayluis.space/assets/og-bodas-de-plata-2026-warm.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Bodas de Plata de Eva y Luis: dos anillos de plata entrelazados y 25 años juntos" />
+  <meta property="og:image:alt" content="Bodas de Plata de Eva y Luis: dos anillos de plata entrelazados sobre un fondo cálido" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Bodas de Plata — 25.º Aniversario" />
   <meta name="twitter:description" content="Eva y Luis te invitan a celebrar 25 años de amor. Acompáñanos el sábado 26 de diciembre de 2026 en Querétaro." />
-  <meta name="twitter:image" content="https://evayluis.space/assets/og-bodas-de-plata-2026.png" />
-  <meta name="twitter:image:alt" content="Bodas de Plata de Eva y Luis: dos anillos de plata entrelazados y 25 años juntos" />
+  <meta name="twitter:image" content="https://evayluis.space/assets/og-bodas-de-plata-2026-warm.jpg" />
+  <meta name="twitter:image:alt" content="Bodas de Plata de Eva y Luis: dos anillos de plata entrelazados sobre un fondo cálido" />
 
   <script type="application/ld+json">
   {
@@ -62,6 +62,10 @@
       /* derived, do not change */
       --accent-soft: color-mix(in oklch, var(--accent) 14%, transparent);
       --silver:      color-mix(in oklch, var(--fg) 42%, var(--bg)); /* the "plata" line */
+
+      /* page ground: the warm rings photo, graded. Dial saturate() up/down for
+         more or less colour without touching anything else. */
+      --photo-grade: saturate(1.22) contrast(1.02) brightness(1.03);
 
       --font-display: 'Iowan Old Style', 'Charter', Georgia, 'Times New Roman', serif;
       --font-body:    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
@@ -103,14 +107,14 @@
        whole invitation reads as a single sheet rather than stacked boxes. */
     body::before {
       content: ''; position: fixed; inset: 0; z-index: -2;
-      background: url('assets/hero-floral.jpg') center / cover no-repeat;
-      filter: grayscale(1) contrast(1.02);
+      background: url('assets/rings.jpeg') center / cover no-repeat;
+      filter: var(--photo-grade);
     }
     body::after {
       content: ''; position: fixed; inset: 0; z-index: -1;
       background: linear-gradient(180deg,
-        color-mix(in oklch, var(--bg) 88%, transparent),
-        color-mix(in oklch, var(--bg) 96%, transparent));
+        color-mix(in oklch, var(--bg) 82%, transparent),
+        color-mix(in oklch, var(--bg) 94%, transparent));
     }
     img, svg { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
@@ -352,7 +356,7 @@
           <p class="cover-meta rise d2">Sábado 26 · Diciembre · 2026</p>
           <hr class="rule-silver rise d2" />
           <p class="lead rise d2" style="margin: 0 auto var(--gap-lg); max-width: 44ch; color: var(--muted);">
-            Veinticinco años de camino compartido. Nos encantará celebrar este día contigo.
+            Nos encantará celebrar este día contigo.
           </p>
           <div class="hero-cta rise d3" style="justify-content: center;">
             <a class="btn btn-primary" href="#asistencia">Confirmar asistencia</a>
@@ -471,8 +475,7 @@
     <section class="section" id="hospedaje" data-od-id="hospedaje">
       <div class="container">
         <div style="text-align: center; max-width: 48ch; margin: 0 auto var(--gap-xl);">
-          <h2 style="margin: 0 0 var(--gap-sm);">Dónde quedarse</h2>
-          <p class="lead" style="margin-inline: auto;">Para la familia y los amigos que vienen de fuera a nuestras Bodas de Plata: aquí una selección de hoteles en Querétaro donde pueden hospedarse esos días.</p>
+          <h2 style="margin: 0 0 var(--gap-sm);">Dónde hospedarse</h2>
         </div>
 
         <div class="hotel-list">
@@ -585,7 +588,7 @@
             <input class="input" id="contacto" name="contacto" type="text" placeholder="Para confirmar contigo" />
           </div>
           <div class="field">
-            <label for="nota">¿Alguna alergia o nota para nosotros? (opcional)</label>
+            <label for="nota">¿Alguna alergia alimenticia? (opcional)</label>
             <textarea class="textarea" id="nota" name="nota" placeholder="Cuéntanos lo que necesitemos saber"></textarea>
           </div>
           <div class="hero-cta" style="margin-top: var(--gap-xs);">
@@ -715,7 +718,7 @@
           'Asistentes: ' + asistentes + (asistentes === '1' ? ' persona' : ' personas')
         ];
         if (contacto) lines.push('Contacto: ' + contacto);
-        if (nota) lines.push('Nota: ' + nota);
+        if (nota) lines.push('Alergia alimenticia: ' + nota);
 
         window.open('https://wa.me/' + PHONE + '?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
 
