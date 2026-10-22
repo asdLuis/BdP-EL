@@ -67,6 +67,12 @@
          more or less colour without touching anything else. */
       --photo-grade: saturate(1.22) contrast(1.02) brightness(1.03);
 
+      /* reserved tones for the bride: shown, then struck through */
+      --tone-blanco: oklch(0.99 0 0);
+      --tone-beige:  oklch(0.93 0.032 82);
+      --tone-perla:  oklch(0.955 0.006 285);
+      --tone-plata:  oklch(0.885 0.005 285);
+
       --font-display: 'Iowan Old Style', 'Charter', Georgia, 'Times New Roman', serif;
       --font-body:    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
       --font-mono:    ui-monospace, 'JetBrains Mono', 'SF Mono', Menlo, monospace;
@@ -149,6 +155,7 @@
     .h3, h3 { font-family: var(--font-display); font-size: var(--fs-h3); font-weight: 400; line-height: 1.3; letter-spacing: -0.005em; margin: 0; }
     .lead   { font-size: var(--fs-lead); line-height: 1.55; color: var(--muted); max-width: 60ch; margin: 0; }
     .meta { font-family: var(--font-mono); font-size: var(--fs-meta); color: var(--muted); }
+    .meta--strong { font-weight: 600; color: var(--fg); }
 
     .topnav {
       position: sticky; top: 0; z-index: 10;
@@ -252,8 +259,8 @@
 
     .swatches { display: flex; flex-wrap: wrap; gap: var(--gap-lg); }
     .swatch { display: flex; flex-direction: column; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-    .swatch-dot { width: 52px; height: 52px; border-radius: 999px; border: 1px solid var(--border); position: relative; overflow: hidden; background: var(--bg); }
-    .swatch--off .swatch-dot::after { content: ''; position: absolute; left: -12%; right: -12%; top: 50%; height: 1.5px; background: var(--fg); transform: rotate(-45deg); }
+    .swatch-dot { width: 52px; height: 52px; border-radius: 999px; border: 1px solid color-mix(in oklch, var(--fg) 16%, transparent); position: relative; overflow: hidden; background: var(--swatch, var(--bg)); box-shadow: inset 0 1px 1px color-mix(in oklch, var(--surface) 70%, transparent), 0 1px 2px color-mix(in oklch, var(--fg) 10%, transparent); }
+    .swatch--off .swatch-dot::after { content: ''; position: absolute; left: -12%; right: -12%; top: 50%; height: 1.5px; background: color-mix(in oklch, var(--fg) 78%, transparent); transform: rotate(-45deg); }
 
     .note {
       max-width: 640px; margin-inline: auto; text-align: center;
@@ -428,10 +435,10 @@
           <h2 style="margin: 18px 0 var(--gap-sm);">Formal</h2>
           <p class="lead" style="margin-inline: auto;">Para que la novia brille, te pedimos reservar estos tonos para ella.</p>
           <div class="swatches" style="justify-content: center; margin-top: var(--gap-lg);">
-            <span class="swatch swatch--off"><span class="swatch-dot"></span>Blanco</span>
-            <span class="swatch swatch--off"><span class="swatch-dot"></span>Beige</span>
-            <span class="swatch swatch--off"><span class="swatch-dot"></span>Perla</span>
-            <span class="swatch swatch--off"><span class="swatch-dot"></span>Plata</span>
+            <span class="swatch swatch--off" style="--swatch: var(--tone-blanco)"><span class="swatch-dot"></span>Blanco</span>
+            <span class="swatch swatch--off" style="--swatch: var(--tone-beige)"><span class="swatch-dot"></span>Beige</span>
+            <span class="swatch swatch--off" style="--swatch: var(--tone-perla)"><span class="swatch-dot"></span>Perla</span>
+            <span class="swatch swatch--off" style="--swatch: var(--tone-plata)"><span class="swatch-dot"></span>Plata</span>
           </div>
         </div>
 
@@ -593,9 +600,8 @@
           </div>
           <div class="hero-cta" style="margin-top: var(--gap-xs);">
             <button class="btn btn-primary" type="submit">Confirmar asistencia</button>
-            <a class="btn btn-secondary" id="wa-link" href="https://wa.me/524421175673?text=Hola%2C%20quisiera%20confirmar%20mi%20asistencia%20a%20las%20Bodas%20de%20Plata%20de%20Eva%20y%20Luis." target="_blank" rel="noopener">Escribir por WhatsApp</a>
           </div>
-          <p class="meta" id="form-hint">O confirma por teléfono al <a href="tel:+524421175673" style="color: var(--fg); border-bottom: 1px solid var(--silver);">442 117 5673</a>.</p>
+          <p class="meta meta--strong" id="form-hint">O confirma por teléfono al <a href="tel:+524421175673" style="color: var(--fg); border-bottom: 1px solid var(--silver);">442 117 5673</a>.</p>
         </form>
 
         <div class="success" id="rsvp-success" role="status" aria-live="polite" tabindex="-1">
@@ -609,7 +615,7 @@
 
   <footer class="pagefoot" data-od-id="footer">
     <div class="container" style="text-align: center;">
-      <p class="cover-meta" style="margin: 0;">Eva &amp; Luis · Bodas de Plata · 2026</p>
+      <p class="cover-meta" style="margin: 0;">Eva &amp; Luis · Bodas de Plata</p>
       <p class="meta" style="margin-top: 10px;">26 de Diciembre, 2026 · El Pueblito, Querétaro</p>
     </div>
   </footer>

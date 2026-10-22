@@ -30,4 +30,4 @@ Derived (defined in `:root`, never as raw hex elsewhere):
 2. **Silver is a line, not a colour.** `--silver` appears only as 1px ornamental rules, the monogram ring and the ampersand; never as a fill behind text.
 3. **Ceremonial whitespace.** Sections breathe at `clamp(48px, 8vw, 96px)`; the cover is intentionally near-empty.
 4. **Mono for facts, serif for names.** Every date, hour and deadline is mono uppercase; every name and headline is display serif.
-5. **Reserved-colour code is shown, not told.** Dress-code exclusions render as pale swatches struck through, never as colour chips.
+5. **Reserved-colour code is shown, not told.** Dress-code exclusions render as the tone itself — a pale swatch in that colour, struck through — so guests read the tone before the rule, never as a saturated colour chip.
