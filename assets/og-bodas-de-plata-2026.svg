@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Bodas de Plata, 25 años juntos: dos anillos de plata entrelazados">
+  <defs>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F5F4F7"/>
+      <stop offset="0.16" stop-color="#DBDADF"/>
+      <stop offset="0.34" stop-color="#A4A3AA"/>
+      <stop offset="0.52" stop-color="#74737A"/>
+      <stop offset="0.68" stop-color="#B9B8BF"/>
+      <stop offset="0.86" stop-color="#EEEDF0"/>
+      <stop offset="1" stop-color="#C9C8CE"/>
+    </linearGradient>
+    <linearGradient id="metalA" gradientUnits="userSpaceOnUse" x1="790" y1="190" x2="1014" y2="414">
+      <stop offset="0" stop-color="#F5F4F7"/>
+      <stop offset="0.16" stop-color="#DBDADF"/>
+      <stop offset="0.34" stop-color="#A4A3AA"/>
+      <stop offset="0.52" stop-color="#74737A"/>
+      <stop offset="0.68" stop-color="#B9B8BF"/>
+      <stop offset="0.86" stop-color="#EEEDF0"/>
+      <stop offset="1" stop-color="#C9C8CE"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#FAFAFC"/>
+  <rect x="34.5" y="34.5" width="1131" height="561" rx="18" fill="none" stroke="#DEDDE2"/>
+
+  <g fill="#2B2B2F">
+    <text x="96" y="163" font-family="Menlo, monospace" font-size="15" letter-spacing="4.2" fill="#73737A">25.º ANIVERSARIO</text>
+    <text x="96" y="252" font-family="Iowan Old Style, Charter, Georgia, serif" font-size="84" letter-spacing="-1.4">Bodas de Plata</text>
+    <text x="96" y="337" font-family="Iowan Old Style, Charter, Georgia, serif" font-size="42" font-style="italic" fill="#73737A">25 años juntos</text>
+    <line x1="96" y1="380" x2="486" y2="380" stroke="#A9A8AE" stroke-width="1"/>
+    <text x="96" y="424" font-family="Menlo, monospace" font-size="15" letter-spacing="3.8">EVA &amp; LUIS</text>
+    <text x="96" y="456" font-family="Menlo, monospace" font-size="12.5" letter-spacing="2.9" fill="#73737A">26 · 12 · 2026   ·   QUERÉTARO</text>
+  </g>
+
+  <g fill="none" stroke="url(#metal)" stroke-width="27" stroke-linecap="round">
+    <circle cx="902" cy="302" r="112"/>
+    <circle cx="1014" cy="332" r="112"/>
+    <path d="M 964.85 209.30 A 112 112 0 0 1 997.13 242.90" stroke="url(#metalA)"/>
+  </g>
+
+  <g fill="none" stroke="#FFFFFF" stroke-linecap="round" opacity="0.5">
+    <path d="M 794.9 255.1 A 116.9 116.9 0 0 1 849.9 197.4" stroke-width="2.4"/>
+    <path d="M 904.2 291.8 A 116.9 116.9 0 0 1 948.1 235.4" stroke-width="2.4" opacity="0.8"/>
+  </g>
+</svg>
